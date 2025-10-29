@@ -41,7 +41,7 @@ namespace SIBDAT25_OOP_ToDoApp
             }
             else
             {
-                MessageBox.Show("Tilføj Opgave");
+                MessageBox.Show("Tilføj en opgave.");
             }
         }
 
@@ -60,7 +60,7 @@ namespace SIBDAT25_OOP_ToDoApp
             }
             else
             {
-                MessageBox.Show("Slet Opgave");
+                MessageBox.Show("Vælge en opgave, for at slette.");
             }
         }
 
