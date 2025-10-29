@@ -7,6 +7,11 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <TextBox x:Name="OpgaveFelt" HorizontalAlignment="Left" Margin="42,240,0,0" TextWrapping="Wrap" Text="Tilføj Opgave" VerticalAlignment="Top" Width="120" TextChanged="Opgave_TextChanged"/>
+        <Button x:Name="AddClick" Content="Tilføj" HorizontalAlignment="Left" Margin="341,180,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+        <ListBox x:Name="Liste" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,316,0,0" SelectionChanged="Liste_SelectionChanged"/>
+        <Button x:Name="Remove" Content="Slet" HorizontalAlignment="Left" Margin="421,180,0,0" VerticalAlignment="Top" Click="Remove_Click"/>
+        <TextBlock x:Name="titel" HorizontalAlignment="Left" Margin="351,33,0,0" TextWrapping="Wrap" Text="To-Do" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>
