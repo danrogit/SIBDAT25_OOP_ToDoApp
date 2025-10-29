@@ -15,7 +15,7 @@ using System.Collections.ObjectModel;
 namespace SIBDAT25_OOP_ToDoApp
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// ToDo App
     /// </summary>
     public partial class MainWindow : Window
     {
