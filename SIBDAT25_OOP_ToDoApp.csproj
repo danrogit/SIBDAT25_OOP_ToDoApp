@@ -8,4 +8,14 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="favicon.png" />
+    <None Remove="to-do-list.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="favicon.png" />
+    <Resource Include="to-do-list.png" />
+  </ItemGroup>
+
 </Project>

@@ -5,13 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SIBDAT25_OOP_ToDoApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <TextBox x:Name="OpgaveFelt" HorizontalAlignment="Left" Margin="42,240,0,0" TextWrapping="Wrap" Text="Tilføj Opgave" VerticalAlignment="Top" Width="120" TextChanged="Opgave_TextChanged"/>
-        <Button x:Name="AddClick" Content="Tilføj" HorizontalAlignment="Left" Margin="341,180,0,0" VerticalAlignment="Top" Click="Button_Click"/>
-        <ListBox x:Name="Liste" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,316,0,0" SelectionChanged="Liste_SelectionChanged"/>
-        <Button x:Name="Remove" Content="Slet" HorizontalAlignment="Left" Margin="421,180,0,0" VerticalAlignment="Top" Click="Remove_Click"/>
-        <TextBlock x:Name="titel" HorizontalAlignment="Left" Margin="351,33,0,0" TextWrapping="Wrap" Text="To-Do" VerticalAlignment="Top"/>
-
+        Title="ToDo App" Height="450" Width="265" Icon="/favicon.png">
+    <Grid Margin="0,0,0,-16" HorizontalAlignment="Center" Width="265">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBox x:Name="OpgaveFelt" HorizontalAlignment="Left" Margin="12,46,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="244" TextChanged="Opgave_TextChanged" Height="28" FontFamily="Bahnschrift" FontSize="14" BorderBrush="#FFDBDFEC"/>
+        <Button x:Name="AddClick" Content="Tilføj" HorizontalAlignment="Left" Margin="11,79,0,0" VerticalAlignment="Top" Click="Button_Click" Height="37" Width="117" FontFamily="Bahnschrift SemiBold" BorderBrush="White" Background="#FF489E45" Foreground="White"/>
+        <ListBox x:Name="Liste" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,121,11,35" SelectionChanged="Liste_SelectionChanged" FontSize="14" FontFamily="Bahnschrift" BorderBrush="#FFDBDFEC" Foreground="#FF424A63"/>
+        <Button x:Name="Remove" Content="Slet" HorizontalAlignment="Left" Margin="133,79,0,0" VerticalAlignment="Top" Click="Remove_Click" Height="37" Width="122" RenderTransformOrigin="0.182,-1.819" FontFamily="Bahnschrift SemiBold" Background="#FFBD3737" BorderBrush="#00000000" Foreground="White"/>
+        <TextBlock x:Name="titel" HorizontalAlignment="Left" Margin="11,13,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="33" Width="222" FontSize="20" FontFamily="Bahnschrift" FontWeight="Bold" Foreground="#FF424A63"><Run Language="da-dk" Text="Tilføj en opgave"/></TextBlock>
     </Grid>
 </Window>
