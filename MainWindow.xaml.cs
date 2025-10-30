@@ -1,4 +1,7 @@
 ﻿using SIBDAT25_OOP_ToDoApp.Model;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Diagnostics.Eventing.Reader;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -9,13 +12,12 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace SIBDAT25_OOP_ToDoApp
 {
     /// <summary>
-    /// ToDo App
+    /// ToDo App, Casper, Daniel og Camilla.
     /// </summary>
     public partial class MainWindow : Window
     {      
@@ -77,6 +79,32 @@ namespace SIBDAT25_OOP_ToDoApp
             if (sender is CheckBox checkBox && checkBox.DataContext is Opgave opgave)
             {
                 opgave.ok = checkBox.IsChecked ?? false;
+            }
+        }
+
+        
+
+        private void Rediger_Click(object sender, RoutedEventArgs e)
+        {
+            Opgave valgtOpgave = (Opgave)Liste.SelectedItem;
+            string NyTekst = OpgaveFelt.Text;
+
+            if (valgtOpgave != null)
+            {
+                if(!string.IsNullOrEmpty(NyTekst))
+                {                 
+                    valgtOpgave.Opg = NyTekst;
+                    Liste.Items.Refresh();
+                    OpgaveFelt.Clear();
+                }
+                else
+                {
+                    MessageBox.Show("Rediger teksten.");
+                }
+            }
+           else
+            {
+                MessageBox.Show("Vælg en opgave du vil redigere.");
             }
         }
     }

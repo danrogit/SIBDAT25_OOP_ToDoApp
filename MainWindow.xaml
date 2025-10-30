@@ -12,7 +12,7 @@
         </Grid.RowDefinitions>
         <TextBox x:Name="OpgaveFelt" HorizontalAlignment="Left" Margin="12,46,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="244" TextChanged="Opgave_TextChanged" Height="28" FontFamily="Bahnschrift" FontSize="14" BorderBrush="#FFDBDFEC"/>
         <Button x:Name="AddClick" Content="Tilføj" HorizontalAlignment="Left" Margin="11,106,0,0" VerticalAlignment="Top" Click="Button_Click" Height="37" Width="117" FontFamily="Bahnschrift SemiBold" BorderBrush="White" Background="#FF489E45" Foreground="White"/>
-        <ListBox x:Name="Liste" Margin="10,153,11,35" SelectionChanged="Liste_SelectionChanged" FontSize="14" FontFamily="Bahnschrift" BorderBrush="#FFDBDFEC" Foreground="#FF424A63">
+        <ListBox x:Name="Liste" Margin="10,225,11,35" SelectionChanged="Liste_SelectionChanged" FontSize="14" FontFamily="Bahnschrift" BorderBrush="#FFDBDFEC" Foreground="#FF424A63">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
@@ -31,5 +31,6 @@
         <Button x:Name="Remove" Content="Slet" HorizontalAlignment="Left" Margin="133,106,0,0" VerticalAlignment="Top" Click="Remove_Click" Height="37" Width="122" RenderTransformOrigin="0.182,-1.819" FontFamily="Bahnschrift SemiBold" Background="#FFBD3737" BorderBrush="#00000000" Foreground="White"/>
         <TextBlock x:Name="titel" HorizontalAlignment="Left" Margin="11,13,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="33" Width="222" FontSize="20" FontFamily="Bahnschrift" FontWeight="Bold" Foreground="#FF424A63"><Run Language="da-dk" Text="Tilføj en opgave"/></TextBlock>
         <DatePicker x:Name="TaskDate" HorizontalAlignment="Center" Margin="0,79,0,0" VerticalAlignment="Top" Width="242"/>
+        <Button x:Name="Rediger" Content="Rediger" HorizontalAlignment="Left" Margin="131,177,0,0" VerticalAlignment="Top" Click="Rediger_Click"/>
     </Grid>
 </Window>
