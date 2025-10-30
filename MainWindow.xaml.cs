@@ -18,25 +18,28 @@ namespace SIBDAT25_OOP_ToDoApp
     /// ToDo App
     /// </summary>
     public partial class MainWindow : Window
-    {
-        Opgave opgave = new Opgave();
+    {      
+        Opgave opgave = new Opgave();      
         ObservableCollection<Opgave> OpgaveListe { get; set; } = new ObservableCollection<Opgave>();
         
         public MainWindow()
         {
             InitializeComponent();
-            
-            
+            TaskDate.SelectedDate = DateTime.Today;
             Liste.ItemsSource = OpgaveListe;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e) // Add button
         {
             string NyOpgave = OpgaveFelt.Text;
+            DateTime selectedDate = TaskDate.SelectedDate ?? DateTime.Today;
 
             if (!string.IsNullOrEmpty(NyOpgave))
             {
-                OpgaveListe.Add(new Opgave { Opg = NyOpgave, ok = false });
+                OpgaveListe.Add(new Opgave 
+                { Opg = NyOpgave, 
+                    ok = false,
+                    dato = selectedDate});
                 OpgaveFelt.Clear();
             }
             else
@@ -54,7 +57,7 @@ namespace SIBDAT25_OOP_ToDoApp
         {
             Opgave sletOpgave = (Opgave)Liste.SelectedItem;
 
-            if(sletOpgave !=null)
+            if(sletOpgave != null)
             {
                 OpgaveListe.Remove(sletOpgave);
             }
@@ -67,6 +70,14 @@ namespace SIBDAT25_OOP_ToDoApp
         private void Liste_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
+        }
+
+        private void CheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            if (sender is CheckBox checkBox && checkBox.DataContext is Opgave opgave)
+            {
+                opgave.ok = checkBox.IsChecked ?? false;
+            }
         }
     }
 }
