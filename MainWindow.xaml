@@ -10,9 +10,9 @@
         <Grid.RowDefinitions>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <TextBox x:Name="OpgaveFelt" HorizontalAlignment="Left" Margin="12,46,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="244" TextChanged="Opgave_TextChanged" Height="28" FontFamily="Bahnschrift" FontSize="14" BorderBrush="#FFDBDFEC"/>
-        <Button x:Name="AddClick" Content="Tilføj" HorizontalAlignment="Left" Margin="11,106,0,0" VerticalAlignment="Top" Click="Button_Click" Height="37" Width="117" FontFamily="Bahnschrift SemiBold" BorderBrush="White" Background="#FF489E45" Foreground="White"/>
-        <ListBox x:Name="Liste" Margin="10,225,11,35" SelectionChanged="Liste_SelectionChanged" FontSize="14" FontFamily="Bahnschrift" BorderBrush="#FFDBDFEC" Foreground="#FF424A63">
+        <TextBox x:Name="OpgaveFelt" HorizontalAlignment="Center" Margin="0,46,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="242" TextChanged="Opgave_TextChanged" Height="28" FontFamily="Bahnschrift" FontSize="14" BorderBrush="#FFDBDFEC"/>
+        <Button x:Name="AddClick" Content="Tilføj" HorizontalAlignment="Left" Margin="11,106,0,0" VerticalAlignment="Top" Click="Button_Click" Height="37" Width="77" FontFamily="Bahnschrift SemiBold" BorderBrush="White" Background="#FF489E45" Foreground="White"/>
+        <ListBox x:Name="Liste" Margin="12,148,11,35" SelectionChanged="Liste_SelectionChanged" FontSize="14" FontFamily="Bahnschrift" BorderBrush="#FFDBDFEC" Foreground="#FF424A63" d:ItemsSource="{d:SampleData ItemCount=5}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
@@ -28,9 +28,18 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <Button x:Name="Remove" Content="Slet" HorizontalAlignment="Left" Margin="133,106,0,0" VerticalAlignment="Top" Click="Remove_Click" Height="37" Width="122" RenderTransformOrigin="0.182,-1.819" FontFamily="Bahnschrift SemiBold" Background="#FFBD3737" BorderBrush="#00000000" Foreground="White"/>
+        <Button x:Name="Remove" Content="Slet" HorizontalAlignment="Left" Margin="176,106,0,0" VerticalAlignment="Top" Click="Remove_Click" Height="37" Width="79" RenderTransformOrigin="0.182,-1.819" FontFamily="Bahnschrift SemiBold" Background="#FFBD3737" BorderBrush="#00000000" Foreground="White"/>
         <TextBlock x:Name="titel" HorizontalAlignment="Left" Margin="11,13,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="33" Width="222" FontSize="20" FontFamily="Bahnschrift" FontWeight="Bold" Foreground="#FF424A63"><Run Language="da-dk" Text="Tilføj en opgave"/></TextBlock>
-        <DatePicker x:Name="TaskDate" HorizontalAlignment="Center" Margin="0,79,0,0" VerticalAlignment="Top" Width="242"/>
-        <Button x:Name="Rediger" Content="Rediger" HorizontalAlignment="Left" Margin="131,177,0,0" VerticalAlignment="Top" Click="Rediger_Click"/>
+        <DatePicker x:Name="TaskDate" HorizontalAlignment="Center" Margin="0,79,0,0" VerticalAlignment="Top" Width="242">
+            <DatePicker.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,0" StartPoint="0.5,1">
+                    <GradientStop Color="#FFA3AEB9"/>
+                    <GradientStop Color="#FF8399A9" Offset="0.375"/>
+                    <GradientStop Color="#FF718597" Offset="0.375"/>
+                    <GradientStop Color="#FFDBDFEC" Offset="1"/>
+                </LinearGradientBrush>
+            </DatePicker.BorderBrush>
+        </DatePicker>
+        <Button x:Name="Rediger" Content="Rediger" HorizontalAlignment="Center" Margin="0,106,0,0" VerticalAlignment="Top" Click="Rediger_Click" Height="37" Width="78" BorderBrush="White" Background="#FFFC9E2E" FontFamily="Bahnschrift SemiBold" Foreground="White"/>
     </Grid>
 </Window>
