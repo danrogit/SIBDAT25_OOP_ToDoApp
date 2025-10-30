@@ -11,6 +11,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics.Eventing.Reader;
 
 namespace SIBDAT25_OOP_ToDoApp
 {
@@ -82,14 +83,28 @@ namespace SIBDAT25_OOP_ToDoApp
 
         
 
-        private void Rediger_Click(object sender, RoutedEventArgs e, string NyOpgave)
+        private void Rediger_Click(object sender, RoutedEventArgs e)
         {
             Opgave valgtOpgave = (Opgave)Liste.SelectedItem;
             string NyTekst = OpgaveFelt.Text;
 
             if (valgtOpgave != null)
             {
-                NyOpgave = NyTekst;
+                if(!string.IsNullOrEmpty(NyTekst))
+                {
+                    valgtOpgave.Opg = NyTekst;
+                    valgtOpgave.dato = DateTime.Now;
+                    Liste.Items.Refresh();
+                    OpgaveFelt.Clear();
+                }
+                else
+                {
+                    MessageBox.Show("Rediger tekst og dato.");
+                }
+            }
+           else
+            {
+                MessageBox.Show("Vælg en opgave du vil redigere.");
             }
         }
     }
