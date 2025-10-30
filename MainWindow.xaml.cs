@@ -1,4 +1,7 @@
 ﻿using SIBDAT25_OOP_ToDoApp.Model;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Diagnostics.Eventing.Reader;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -9,9 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Diagnostics.Eventing.Reader;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace SIBDAT25_OOP_ToDoApp
 {
@@ -91,15 +92,14 @@ namespace SIBDAT25_OOP_ToDoApp
             if (valgtOpgave != null)
             {
                 if(!string.IsNullOrEmpty(NyTekst))
-                {
+                {                 
                     valgtOpgave.Opg = NyTekst;
-                    valgtOpgave.dato = DateTime.Now;
                     Liste.Items.Refresh();
                     OpgaveFelt.Clear();
                 }
                 else
                 {
-                    MessageBox.Show("Rediger tekst og dato.");
+                    MessageBox.Show("Rediger teksten.");
                 }
             }
            else
