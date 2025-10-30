@@ -15,7 +15,7 @@ using System.Collections.ObjectModel;
 namespace SIBDAT25_OOP_ToDoApp
 {
     /// <summary>
-    /// ToDo App
+    /// ToDo App, Casper, Daniel og Camilla.
     /// </summary>
     public partial class MainWindow : Window
     {      
@@ -77,6 +77,19 @@ namespace SIBDAT25_OOP_ToDoApp
             if (sender is CheckBox checkBox && checkBox.DataContext is Opgave opgave)
             {
                 opgave.ok = checkBox.IsChecked ?? false;
+            }
+        }
+
+        
+
+        private void Rediger_Click(object sender, RoutedEventArgs e, string NyOpgave)
+        {
+            Opgave valgtOpgave = (Opgave)Liste.SelectedItem;
+            string NyTekst = OpgaveFelt.Text;
+
+            if (valgtOpgave != null)
+            {
+                NyOpgave = NyTekst;
             }
         }
     }
