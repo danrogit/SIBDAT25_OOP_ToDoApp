@@ -7,13 +7,12 @@ using System.Threading.Tasks;
 
 namespace SIBDAT25_OOP_ToDoApp.Model
 {
-    class Opgave
+    class Opgave  
     {
-        public string navn { get; set; }
-        public DateTime dato { get; set; }
-        public string status { get; set; }
-        public string Opg { get; set; }
-        public bool ok { get; set; }
-        public override string ToString() => Opg ?? navn ?? string.Empty;
+        public string navn { get; set; }           // Opgave navnet
+        public DateTime dato { get; set; }         // Dato for opgaven
+        public string Opg { get; set; }            // Ny opgave - linje 44 + 97 i MainWindow.xaml.cs
+        public bool ok { get; set; }               // Boolsk værdi
+        public override string ToString() => Opg ?? navn ?? string.Empty;  // Tjekker om navn og opg er null, og hvis det ikke er null bliver det returneret
     }
 }

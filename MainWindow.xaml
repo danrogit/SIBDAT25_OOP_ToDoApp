@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SIBDAT25_OOP_ToDoApp"
         mc:Ignorable="d"
-        Title="ToDo App" Height="450" Width="265" Icon="/favicon.png">
+        Title="ToDo App" Height="450" Width="265">
     <Grid Margin="0,0,0,-16" HorizontalAlignment="Center" Width="265">
         <Grid.RowDefinitions>
             <RowDefinition/>
